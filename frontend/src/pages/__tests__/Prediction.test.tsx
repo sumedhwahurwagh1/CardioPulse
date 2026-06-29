@@ -1,4 +1,3 @@
-import React from 'react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { Prediction } from '../Prediction';
@@ -29,7 +28,7 @@ describe('Prediction Component Navigation', () => {
       status: 'No Heart Disease',
       probability_disease: 0.1,
       probability_no_disease: 0.9,
-      risk_level: 'Low',
+      risk_level: 'Low' as const,
       advice: ['Keep it up!'],
     };
     vi.mocked(apiService.predict).mockResolvedValueOnce(mockResult);

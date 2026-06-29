@@ -102,13 +102,17 @@ export const Prediction: React.FC = () => {
     { id: 3, title: 'Clinical Indicators', icon: Activity, fields: ['chest_pain_type', 'fasting_blood_sugar', 'resting_ecg', 'exercise_induced_angina', 'st_depression', 'st_slope', 'num_major_vessels', 'thalassemia'] },
   ];
 
-  const handleNext = async () => {
-    // Validate current step fields before going forward
+  const handleNext = async (e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     const fieldsToValidate = steps[currentStep - 1].fields as (keyof AssessmentFormValues)[];
     const isStepValid = await trigger(fieldsToValidate);
     
     if (isStepValid) {
-      setCurrentStep((prev) => Math.min(prev + 1, steps.length));
+      const nextStep = Math.min(currentStep + 1, steps.length);
+      setCurrentStep(nextStep);
       setErrorMsg(null);
     }
   };
@@ -135,7 +139,6 @@ export const Prediction: React.FC = () => {
     setErrorMsg(null);
     try {
       const response = await apiService.predict(data);
-      // Navigate to /result and pass prediction result in router state
       navigate('/result', { state: { result: response, input: data } });
     } catch (err) {
       if (err instanceof Error) {
