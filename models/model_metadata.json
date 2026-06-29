@@ -1,0 +1,10 @@
+{
+    "model_name": "Logistic Regression",
+    "model_class": "LogisticRegression",
+    "trained_at": "2026-06-29T11:43:07.965689",
+    "dataset_shape": [
+        400,
+        14
+    ],
+    "random_state": 42
+}

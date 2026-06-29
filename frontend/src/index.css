@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply bg-slate-50 text-slate-900 font-sans antialiased scroll-smooth h-full;
+  }
+  #root {
+    @apply h-full flex flex-col;
+  }
+}
+
+/* Custom card and loading styling */
+.glass-panel {
+  @apply bg-white/80 backdrop-blur-md border border-slate-200/80 shadow-sm rounded-2xl;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full hover:bg-slate-400;
+}
