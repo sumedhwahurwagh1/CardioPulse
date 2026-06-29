@@ -118,6 +118,18 @@ export const Prediction: React.FC = () => {
     setErrorMsg(null);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLFormElement>) => {
+    if (e.key === 'Enter') {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'INPUT' || target.tagName === 'SELECT') {
+        if (currentStep < steps.length) {
+          e.preventDefault();
+          handleNext();
+        }
+      }
+    }
+  };
+
   const onSubmit = async (data: AssessmentFormValues) => {
     setIsSubmitting(true);
     setErrorMsg(null);
@@ -201,7 +213,11 @@ export const Prediction: React.FC = () => {
         )}
 
         {/* Form panel */}
-        <form onSubmit={handleSubmit(onSubmit as any)} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-md space-y-6 overflow-hidden">
+        <form 
+          onSubmit={handleSubmit(onSubmit as any)} 
+          onKeyDown={handleKeyDown}
+          className="rounded-2xl border border-slate-200 bg-white p-6 shadow-md space-y-6 overflow-hidden"
+        >
           
           <AnimatePresence mode="wait">
             {currentStep === 1 && (
