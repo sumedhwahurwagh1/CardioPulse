@@ -123,9 +123,9 @@ Heart-Disease-Detection-ML/
 
 | Landing Page | Diagnostic Wizard | Risk Results |
 | :---: | :---: | :---: |
-| *[landing_page.png](file:///Users/sumedhwahurwagh/Heart-Disease-Detection-ML/screenshots/landing_page.png)* | *[diagnostic_wizard.png](file:///Users/sumedhwahurwagh/Heart-Disease-Detection-ML/screenshots/diagnostic_wizard.png)* | *[risk_results.png](file:///Users/sumedhwahurwagh/Heart-Disease-Detection-ML/screenshots/risk_results.png)* |
+| *[landing_page.png](/Users/sumedhwahurwagh/Heart-Disease-Detection-ML/screenshots/landing_page.png)* | *[diagnostic_wizard.png](/Users/sumedhwahurwagh/Heart-Disease-Detection-ML/screenshots/diagnostic_wizard.png)* | *[risk_results.png](/Users/sumedhwahurwagh/Heart-Disease-Detection-ML/screenshots/risk_results.png)* |
 
-*Please check [screenshots/README.md](file:///Users/sumedhwahurwagh/Heart-Disease-Detection-ML/screenshots/README.md) to populate the directory.*
+*Please check [screenshots/README.md](/Users/sumedhwahurwagh/Heart-Disease-Detection-ML/screenshots/README.md) to populate the directory.*
 
 ---
 
