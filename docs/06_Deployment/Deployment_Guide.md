@@ -1,8 +1,13 @@
-Deployment Guide
-Project Name
-Heart Disease Classification System
-Version: 1.0
-Document Type: Deployment Guide
+# Deployment Guide — CardioPulse v1.0
+
+**Project Name**: CardioPulse  
+**Version**: 1.0 (Production Release)  
+**Status**: Production Release  
+**Author**: Sumedh Sanjay Wahurwagh  
+**Copyright**: © 2026 Sumedh Sanjay Wahurwagh. All Rights Reserved.  
+**Disclaimer**: This application is intended for educational and research purposes only. It does not provide medical diagnosis and must not replace consultation with qualified healthcare professionals.  
+
+---
 1. Purpose
 This document explains how to deploy and run the Heart Disease Classification System. It covers the
 project structure, software requirements, installation steps, execution, verification, and maintenance.

@@ -1,8 +1,13 @@
-Software Requirements Specification (SRS)
-Project Name
-Heart Disease Classification System
-Version: 1.0
-Document Type: Software Requirements Specification (SRS)
+# Software Requirements Specification (SRS) — CardioPulse v1.0
+
+**Project Name**: CardioPulse  
+**Version**: 1.0 (Production Release)  
+**Status**: Production Release  
+**Author**: Sumedh Sanjay Wahurwagh  
+**Copyright**: © 2026 Sumedh Sanjay Wahurwagh. All Rights Reserved.  
+**Disclaimer**: This application is intended for educational and research purposes only. It does not provide medical diagnosis and must not replace consultation with qualified healthcare professionals.  
+
+---
 1. Introduction
 1.1 Purpose
 This document defines the functional and non-functional requirements for the Heart Disease

@@ -1,8 +1,13 @@
-Database / Data Dictionary
-Project Name
-Heart Disease Classification System
-Version: 1.0
-Document Type: Data Dictionary
+# Data Dictionary — CardioPulse v1.0
+
+**Project Name**: CardioPulse  
+**Version**: 1.0 (Production Release)  
+**Status**: Production Release  
+**Author**: Sumedh Sanjay Wahurwagh  
+**Copyright**: © 2026 Sumedh Sanjay Wahurwagh. All Rights Reserved.  
+**Disclaimer**: This application is intended for educational and research purposes only. It does not provide medical diagnosis and must not replace consultation with qualified healthcare professionals.  
+
+---
 1. Purpose
 This document describes the dataset used by the Heart Disease Classification System. It explains each
 attribute, its data type, possible values, and its role in the machine learning model.

@@ -1,8 +1,13 @@
-Product Requirements Document (PRD)
-Project Name
-Heart Disease Classification System
-Version: 1.0
-Status: Draft
+# Product Requirements Document (PRD) — CardioPulse v1.0
+
+**Project Name**: CardioPulse  
+**Version**: 1.0 (Production Release)  
+**Status**: Production Release  
+**Author**: Sumedh Sanjay Wahurwagh  
+**Copyright**: © 2026 Sumedh Sanjay Wahurwagh. All Rights Reserved.  
+**Disclaimer**: This application is intended for educational and research purposes only. It does not provide medical diagnosis and must not replace consultation with qualified healthcare professionals.  
+
+---
 1. Project Overview
 The Heart Disease Classification System is a machine learning application that predicts whether a
 patient is likely to have heart disease based on medical information. The system aims to assist
