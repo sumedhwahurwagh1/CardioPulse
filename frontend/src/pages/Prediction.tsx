@@ -494,8 +494,9 @@ export const Prediction: React.FC = () => {
               Back
             </button>
             
-            {currentStep < steps.length ? (
+            {currentStep < steps.length && (
               <button
+                key="next-button"
                 type="button"
                 onClick={handleNext}
                 aria-label="Go to the next step"
@@ -504,8 +505,11 @@ export const Prediction: React.FC = () => {
                 Next Step
                 <ChevronRight className="h-4 w-4" />
               </button>
-            ) : (
+            )}
+
+            {currentStep === steps.length && (
               <button
+                key="submit-button"
                 type="submit"
                 disabled={isSubmitting}
                 aria-label="Submit patient risk assessment form"
