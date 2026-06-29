@@ -20,20 +20,24 @@ def create_app() -> FastAPI:
     app.state.startup_time = time.time()
 
     # CORS configuration
-    env = os.getenv("ENV", "development")
-    if env == "production":
-        origins_str = os.getenv("CORS_ALLOWED_ORIGINS", "")
-        allowed_origins = [orig.strip() for orig in origins_str.split(",") if orig.strip()]
-        if not allowed_origins:
-            # Fallback local/production targets if env not specified
-            allowed_origins = ["http://localhost:5173", "http://localhost:8080"]
-            logger.warning(f"Production CORS fallback initialized: {allowed_origins}")
-    else:
-        allowed_origins = ["*"]
+    allowed_origins = [
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "https://cardio-pulse.vercel.app"
+    ]
+    
+    # Append additional origins from env if available
+    origins_str = os.getenv("CORS_ALLOWED_ORIGINS", "")
+    if origins_str:
+        extra_origins = [orig.strip() for orig in origins_str.split(",") if orig.strip()]
+        allowed_origins.extend(extra_origins)
+        
+    logger.info(f"CORS allowed origins configured: {allowed_origins}")
 
     app.add_middleware(
         CORSMiddleware,
         allow_origins=allowed_origins,
+        allow_origin_regex=r"https://.*\.vercel\.app",
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
