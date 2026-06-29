@@ -1,17 +1,34 @@
-# CardioPulse — AI Heart Disease Classification System
+# CardioPulse v1.0 — AI Heart Disease Classification System
 
-[![CI Pipeline](https://github.com/sumedhwahurwagh/Heart-Disease-Detection-ML/actions/workflows/ci.yml/badge.svg)](https://github.com/sumedhwahurwagh/Heart-Disease-Detection-ML/actions)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![CI Pipeline](https://github.com/sumedhwahurwagh1/CardioPulse/actions/workflows/ci.yml/badge.svg)](https://github.com/sumedhwahurwagh1/CardioPulse/actions)
+[![License: Custom](https://img.shields.io/badge/License-Copyright-blue.svg)](#copyright-and-ownership)
+[![Release Status](https://img.shields.io/badge/Release-Production-green.svg)](#project-status)
 
-CardioPulse is a production-grade machine learning system that estimates a patient's coronary artery disease risk and provides structured clinical recommendations. The system is designed as a modular Python package paired with a FastAPI microservice backend and a high-fidelity single-page React frontend dashboard.
+CardioPulse is a production-grade machine learning platform that evaluates patient clinical metrics to estimate coronary artery disease risk and provide custom medical recommendations. The system features a modular Python ML engine, a high-performance FastAPI backend service, and a premium React TypeScript single-page dashboard.
 
 ---
 
-## 🏗️ Architecture
+## 🚀 Live Demo & Deployment URLs
+
+- **Frontend Client**: [https://cardio-pulse.vercel.app](https://cardio-pulse.vercel.app)
+- **Backend API**: [https://cardiopulse-api.onrender.com](https://cardiopulse-api.onrender.com)
+- **API Documentation (Swagger)**: [https://cardiopulse-api.onrender.com/docs](https://cardiopulse-api.onrender.com/docs)
+- **GitHub Repository**: [https://github.com/sumedhwahurwagh1/CardioPulse](https://github.com/sumedhwahurwagh1/CardioPulse)
+
+---
+
+## 🧠 Medical Disclaimer
+
+> [!IMPORTANT]
+> This application is intended for educational and research purposes only. It does not provide medical diagnosis, treatment guidelines, or patient outcomes, and must not replace consultations with qualified healthcare professionals or certified cardiologists.
+
+---
+
+## 🏗️ Technical Architecture
 
 ```mermaid
 graph TD
-    subgraph Client ["Client Layer (React & Vite)"]
+    subgraph Client ["Client Layer (React v18 & Vite v8)"]
         UI["SPA Dashboard (Tailwind CSS / Framer Motion)"]
         RHF["React Hook Form & Zod Validation"]
         Axios["Axios API Client"]
@@ -19,7 +36,7 @@ graph TD
 
     subgraph API ["Server Layer (FastAPI)"]
         Routes["APIRouter (routes.py)"]
-        Middleware["Exceptions & CORS (app.py)"]
+        Middleware["CORSMiddleware & Exceptions (app.py)"]
         Service["PredictionService (prediction_service.py)"]
     end
 
@@ -51,6 +68,16 @@ graph TD
 
 ---
 
+## ✨ System Features
+
+- **Candidate Model Comparison**: Auto-trains and compares five machine learning classifiers (Logistic Regression, Random Forest, Support Vector Machine, KNN, Decision Tree) and deploys the highest-performing instance in production.
+- **Dynamic Multi-Step Form**: Wizard-style client diagnostics form (Personal -> Vitals -> Clinical) with real-time Zod validations.
+- **SaaS Risk Visualizer**: SVG radial progress bar rendering estimated coronary risk probability.
+- **Enhanced Health Telemetry**: Live `/health` route reporting API version, environment name, active model state, and server uptime.
+- **Segregated Operational Logging**: Directs log statements to `api.log`, `training.log`, and `error.log`.
+
+---
+
 ## 🛠️ Technology Stack
 
 - **Frontend Client**: React 18, TypeScript, Vite 8, Tailwind CSS v3, React Router v6, React Hook Form, Zod, Framer Motion, Lucide Icons.
@@ -60,46 +87,39 @@ graph TD
 
 ---
 
-## ✨ Features
-
-- **Multi-Model Pipeline Comparison**: Auto-trains and validates candidate classifiers (Logistic Regression, Random Forest, SVM, KNN, Decision Tree) and deploys the highest-performing instance.
-- **Multi-Step Diagnosis Form**: Dynamic input validation wizard with inline error alerts and descriptive medical tooltips.
-- **Radial Progress Visualizer**: Displays risk percentage using a custom SVG circular meter.
-- **Automated Uptime & Health Check**: Enhanced `/health` route reporting active versions, host environment, and server uptime.
-- **Structured Log Partitioning**: Segregates operational logs into `api.log`, `training.log`, and `error.log`.
-
----
-
 ## 📁 Folder Structure
 
 ```text
 Heart-Disease-Detection-ML/
 │
-├── .github/workflows/          # GitHub Actions CI workflow
-├── dataset/                    # Training datasets (CSV)
-├── models/                     # Pickled estimators, scalers, and JSON metadata
-├── reports/                    # Generated performance plots
-├── screenshots/                # Showcase images and walkthrough instructions
+├── .github/workflows/          # GitHub Actions CI pipeline configs
+├── assets/                     # Media placeholders and diagrams
+├── dataset/                    # UCI Heart Disease CSV dataset
+├── docs/                       # Case studies, deployment, and resume guides
+├── logo/                       # Project logo vectors
+├── models/                     # Pickled model, scaler, and JSON performance metrics
+├── reports/                    # Generated comparison plot figures
+├── screenshots/                # Application screen captures
 ├── backend/                    # Python package and FastAPI API
-│   ├── api/                    # Routers, schemas, and exception handlers
-│   ├── ml/                     # Configurations, processing, and pipeline logic
-│   ├── services/               # Logger and prediction services
-│   ├── train_cli.py            # CLI trainer
-│   ├── predict_cli.py          # Interactive CLI predictor
-│   └── app.py                  # API starter script
+│   ├── api/                    # API routing, exception managers, and validation schemas
+│   ├── ml/                     # ML training configs, preprocessors, and evaluation scripts
+│   ├── services/               # Shared logging structures and business logic services
+│   ├── train_cli.py            # CLI training automation
+│   ├── predict_cli.py          # Interactive command-line predictor
+│   └── app.py                  # API server instance
 │
-├── frontend/                   # React TypeScript frontend
-│   ├── src/                    # Components, pages, layout, types, and hooks
-│   └── Dockerfile              # Frontend multi-stage Docker build
+├── frontend/                   # React TypeScript frontend Single-Page Application
+│   ├── src/                    # Components, routing layouts, and services
+│   └── Dockerfile              # Multi-stage frontend Docker configuration
 │
-├── docker-compose.yml          # Containers link
-├── render.yaml                 # Render blueprint
+├── docker-compose.yml          # Containers orchestration compose configuration
+├── render.yaml                 # Render Blueprint configuration
 └── README.md                   # Repository documentation
 ```
 
 ---
 
-## 📸 Screenshots
+## 📸 Application Screenshots
 
 | Landing Page | Diagnostic Wizard | Risk Results |
 | :---: | :---: | :---: |
@@ -109,7 +129,7 @@ Heart-Disease-Detection-ML/
 
 ---
 
-## 🚦 Installation & Local Development
+## 🚦 Local Installation Guide
 
 ### 1. Backend Service Setup
 
@@ -121,10 +141,10 @@ source .venv/bin/activate
 # Install dependencies
 pip install -r requirements.txt
 
-# Run model training CLI
+# Run model training CLI (fits and serializes best candidate model)
 PYTHONPATH=. python3 backend/train_cli.py
 
-# Start local dev server
+# Start local FastAPI dev server
 PYTHONPATH=. uvicorn backend.app:app --reload
 ```
 API docs will load at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
@@ -148,31 +168,40 @@ To spin up the entire application locally using Docker:
 # Build and run containers
 docker compose up --build
 ```
-- Frontend will serve on [http://localhost:8080](http://localhost:8080).
-- Backend API will run on [http://localhost:8000](http://localhost:8000).
+- Frontend serves on [http://localhost:8080](http://localhost:8080).
+- Backend API runs on [http://localhost:8000](http://localhost:8000).
 
 ---
 
-## ☁️ Cloud Deployment Guide
+## 👤 Developer Profile
 
-### Backend: Render
-1. Connect your repository to **Render**.
-2. Create a new **Web Service** using the root `render.yaml` Blueprint or configure:
-   - **Environment**: Python
-   - **Build Command**: `pip install -r backend/requirements.txt && PYTHONPATH=. python backend/train_cli.py`
-   - **Start Command**: `PYTHONPATH=. uvicorn backend.app:app --host 0.0.0.0 --port $PORT`
+**Sumedh Sanjay Wahurwagh**
+- **Role**: Full Stack Developer & Machine Learning Engineer
+- **Institution**: College of Engineering and Technology, Akola
+- **Skills**: Python, FastAPI, React, TypeScript, Scikit-learn, Docker, Machine Learning, REST APIs, Tailwind CSS, GitHub Actions, Render, Vercel.
 
-### Frontend: Vercel
-1. Connect your repository to **Vercel**.
-2. Add a new Project selecting the `frontend/` directory.
-3. Configure environment variables:
-   - `VITE_API_URL`: URL of your deployed Render backend (e.g. `https://cardiopulse-api.onrender.com`).
-4. Build settings are auto-resolved from Vite configs. Fallback routes are handled by [vercel.json](file:///Users/sumedhwahurwagh/Heart-Disease-Detection-ML/frontend/vercel.json).
+### Professional Links:
+- **GitHub**: [https://github.com/sumedhwahurwagh1](https://github.com/sumedhwahurwagh1)
+- **LinkedIn**: [https://www.linkedin.com/in/sumedh-wahurwagh-234093307/](https://www.linkedin.com/in/sumedh-wahurwagh-234093307/)
+- **Email**: [sumedhwahurwagh1@gmail.com](mailto:sumedhwahurwagh1@gmail.com)
 
 ---
 
-## 🗺️ Future Roadmap
+## 🤝 Acknowledgements
 
-- [ ] **Explainable AI (XAI)**: Integrate SHAP or LIME charts in the results tab to show which features contributed most to high-risk scores.
-- [ ] **Patient History Database**: Connect PostgreSQL to store histories and visualize risk progression.
-- [ ] **OAuth2 Authentication**: Secure diagnostic evaluations behind clinician credentials.
+CardioPulse v1.0 relies on the contributions of the following open-source frameworks and research entities:
+- **UCI Machine Learning Repository**: Cleveland Clinic Heart Disease dataset creators.
+- **FastAPI / Uvicorn**: High-performance asynchronous API foundation.
+- **Scikit-Learn / Pandas**: Core scientific data fitting structures.
+- **React / Tailwind CSS / Framer Motion**: Interactive frontend framework and layout styles.
+- **Docker / Render / Vercel**: Deployment platforms and containerization tools.
+
+*Datasets and frameworks remain the property of their respective owners.*
+
+---
+
+## 🔒 Copyright and Ownership
+
+**Copyright © 2026 Sumedh Sanjay Wahurwagh. All Rights Reserved.**
+
+This software, source code, UI, documentation, and system architecture are the intellectual property of Sumedh Sanjay Wahurwagh. Unauthorized commercial redistribution or code rebranding without explicit written permission is strictly prohibited.

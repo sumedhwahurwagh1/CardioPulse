@@ -189,6 +189,14 @@ export const Result: React.FC = () => {
           </div>
         </div>
 
+        {/* Medical disclaimer callout */}
+        <div className="rounded-xl border border-amber-100 bg-amber-50/50 p-4 text-xs text-amber-800 leading-normal flex items-start gap-2.5">
+          <AlertTriangle className="h-5 w-5 shrink-0 text-amber-600 mt-0.5" />
+          <div>
+            <strong>Educational & Research Notice:</strong> This application is intended for educational and research purposes only. It does not provide medical diagnosis and must not replace consultation with qualified healthcare professionals or certified cardiologists.
+          </div>
+        </div>
+
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
           <Link

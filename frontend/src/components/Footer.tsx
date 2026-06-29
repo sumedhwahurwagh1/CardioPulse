@@ -1,28 +1,99 @@
-import React from 'react';
 import { ShieldAlert } from 'lucide-react';
+
+const GithubIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+    <path d="M9 18c-4.51 2-5-2-7-2" />
+  </svg>
+);
+
+const LinkedinIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect width="4" height="12" x="2" y="9" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full border-t border-slate-200 bg-white py-8">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-          {/* Logo & copyright */}
-          <div className="flex flex-col items-center md:items-start gap-1">
-            <span className="text-base font-semibold text-slate-900">
-              CardioPulse Systems
-            </span>
-            <span className="text-xs text-slate-500">
-              © {new Date().getFullYear()} CardioPulse. All rights reserved.
-            </span>
+    <footer className="w-full border-t border-slate-200 bg-white py-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 items-start">
+          {/* Logo & Maintainer Details */}
+          <div className="flex flex-col items-center md:items-start gap-3">
+            <div className="flex items-center gap-2">
+              <span className="text-lg font-bold tracking-tight text-slate-900">
+                CardioPulse
+              </span>
+              <span className="inline-flex items-center rounded-full bg-blue-50 px-2 py-0.5 text-xs font-semibold text-blue-700 ring-1 ring-inset ring-blue-700/10">
+                v1.0
+              </span>
+              <span className="inline-flex items-center rounded-full bg-green-50 px-2 py-0.5 text-xs font-semibold text-green-700 ring-1 ring-inset ring-green-700/10">
+                Production
+              </span>
+            </div>
+            <p className="text-xs text-slate-500 text-center md:text-left">
+              Developed & Maintained by <span className="font-semibold text-slate-700">Sumedh Sanjay Wahurwagh</span>
+            </p>
+            <div className="flex items-center gap-3 mt-2">
+              <a
+                href="https://github.com/sumedhwahurwagh1"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub Repository"
+                className="text-slate-400 hover:text-slate-600 transition-colors"
+              >
+                <GithubIcon className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/sumedh-wahurwagh-234093307/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn Profile"
+                className="text-slate-400 hover:text-slate-600 transition-colors"
+              >
+                <LinkedinIcon className="h-5 w-5" />
+              </a>
+            </div>
           </div>
 
           {/* Medical disclaimer */}
-          <div className="flex max-w-md items-start gap-2.5 rounded-xl bg-amber-50/80 p-3.5 border border-amber-100 text-amber-800">
+          <div className="flex items-start gap-2.5 rounded-2xl bg-amber-50/50 p-4 border border-amber-100/70 text-amber-800 md:col-span-2">
             <ShieldAlert className="h-5 w-5 shrink-0 text-amber-600 mt-0.5" />
-            <div className="text-xs leading-relaxed">
-              <span className="font-semibold">Medical Disclaimer:</span> This AI tool is built for diagnostic decision support and educational research. It does NOT replace professional medical diagnosis, advice, or cardiologist consultations.
+            <div className="text-xs leading-relaxed space-y-1">
+              <span className="font-bold text-amber-900 block">Medical Disclaimer</span>
+              <p>
+                This application is intended for educational and research purposes only. It does not provide medical diagnosis and must not replace consultation with qualified healthcare professionals.
+              </p>
             </div>
           </div>
+        </div>
+
+        {/* Copyright notice border-t */}
+        <div className="border-t border-slate-100 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] md:text-xs text-slate-400">
+          <p className="text-center sm:text-left">
+            © 2026 Sumedh Sanjay Wahurwagh. All Rights Reserved.
+          </p>
+          <p className="text-center sm:text-right max-w-xl leading-normal">
+            This software, source code, UI, documentation, and architecture are the intellectual property of Sumedh Sanjay Wahurwagh. Unauthorized commercial redistribution without written permission is prohibited.
+          </p>
         </div>
       </div>
     </footer>

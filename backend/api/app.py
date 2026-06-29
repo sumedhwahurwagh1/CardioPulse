@@ -12,9 +12,18 @@ from backend.services.logger import logger
 
 def create_app() -> FastAPI:
     app = FastAPI(
-        title="Heart Disease Classification API",
-        description="FastAPI service for patient risk estimation and clinical advice.",
-        version="1.0"
+        title="CardioPulse API",
+        description="AI-powered Heart Disease Classification API",
+        version="1.0.0",
+        contact={
+            "name": "Sumedh Sanjay Wahurwagh",
+            "email": "sumedhwahurwagh1@gmail.com",
+            "url": "https://github.com/sumedhwahurwagh1"
+        },
+        license_info={
+            "name": "© 2026 Sumedh Sanjay Wahurwagh. All Rights Reserved.",
+            "url": "https://github.com/sumedhwahurwagh1/CardioPulse/blob/main/LICENSE"
+        }
     )
     
     app.state.startup_time = time.time()
